@@ -85,7 +85,7 @@
             })
             ->addColumn('action', function($index){
                 $tag = '<center><a class="btn btn-primary btn-sm detail" href="'.route('monitoring-order.detail',['id' => $index->id]).'")><i class="fa fa-bars"></i><span class="tombol"> Detail</span></a>';
-                $tag .= ' <a class="btn btn-danger btn-sm hapus" idt="'.$index->id.'"")><i class="fa fa-check"></i><span class="tombol"> Selesai</span></a></center>';
+                $tag .= ' <a class="btn btn-success btn-sm hapus" idt="'.$index->id.'"")><i class="fa fa-check"></i><span class="tombol"> Selesai</span></a></center>';
                 return $tag;
             })
             ->rawColumns(['action','status'])
