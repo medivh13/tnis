@@ -18,12 +18,12 @@
       <div class="panel-body">
         <div class="col-lg-6">
           <div class="form-group">
-            <label for="date" class="control-label mb-1">Order's Date</label>
+            <label for="date" class="control-label mb-1">Orders Date</label>
             <input id="date" type="text" class="form-control date" name="date" placeholder="Pick Date" value="{{$tanggal}}" readonly>
           </div>
           <div class="form-group">
             <label for="code" class="control-label mb-1">Code</label>
-            <input id="code" type="text" class="form-control" name="code" placeholder="Order's Code"  value="{{$code}}"readonly>
+            <input id="code" type="text" class="form-control" name="code" placeholder="Order's Code" readonly>
           </div>
           <div class="form-group">
             <label for="customer" class="control-label mb-1">Customer</label>
@@ -48,9 +48,9 @@
         <div class="form-group">
           <div class="col-sm-12">
             <select name="product_id" class="form-control product_id" data-placeholder="Pilih Layanan">
-              @foreach ($product as $key => $val)
+              {{--  @foreach ($product as $key => $val)
               <option value="{{$val->id}}">{{ ucwords($val->name) }}</option>
-              @endforeach
+              @endforeach  --}}
             </select>
           </div>
         </div><br><br>
@@ -146,7 +146,7 @@
   // });
    
 
-  $("#jxForm").validate({
+  var valid = $("#jxForm").validate({
     rules:{
       customer:{required:true},
       telp:{required:true},
@@ -182,15 +182,17 @@
       $(element).addClass('is-valid').removeClass('is-invalid');
     }
   });
-
-  $('#jxForm').submit(function(){
-    let _this = $(this)
-    setTimeout(function(){
-      _this[0].reset()
-      $('.table3').find('tbody').html('');
-      toastr.success('Order Berhasil');
-    }, 1500)
-  })
+  if(valid){
+    $('#jxForm').submit(function(){
+      let _this = $(this)
+      setTimeout(function(){
+        _this[0].reset()
+        $('.table3').find('tbody').html('');
+        toastr.success('Order Berhasil');
+      }, 1500)
+    })
+  }
+  
 
 })( jQuery );
 
@@ -223,5 +225,7 @@ function codegen(){
     }
   });
 }
+
+
 </script>
 @endsection

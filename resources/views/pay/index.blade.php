@@ -57,10 +57,10 @@
   });
   getData();
 
-  $(document).off('click', '.cetak').on('click', '.cetak', function(){
-    // alert($(this).attr('idt'));
-    cetak($(this).attr('idt'));
-  });
+  // $(document).off('click', '.cetak').on('click', '.cetak', function(){
+  //   // alert($(this).attr('idt'));
+  //   cetak($(this).attr('idt'));
+  // });
 
 })( jQuery );
 
@@ -95,10 +95,10 @@ function getData(){
 function cetak(id){
   jQuery.ajax({
     type: 'GET',
-    url: 'order/cetak/'+id,
+    url: 'pay/cetak/'+id,
     dataType: "JSON",
     data: {},
-    success: function(response){
+    success: function(){
       // jQuery("[name='code']").val(response);
       reloadTable();
       toastr.success('Cetak Pembayaran Berhasil');

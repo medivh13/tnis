@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Manifa Laundry</title>
-    <meta name="description" content="Manifa Laundry">
+    <title>Laravel</title>
+    <meta name="description" content="Laravel">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -45,9 +45,9 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img class="tombol" src="{{asset('template/images/manifa.jpg')}}" alt="Logo" style="width:100%; height:100%"></a>
+                {{--  <a class="navbar-brand" href="./"><img class="tombol" src="{{asset('template/images/manifa.jpg')}}" alt="Logo" style="width:100%; height:100%"></a>
                 <!-- <a class="navbar-brand" href="./">Manifa Laundry</a> -->
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('template/images/logo2.png')}}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{asset('template/images/logo2.png')}}" alt="Logo"></a>  --}}
             </div>
 
             @include('layouts.sidebar')
@@ -127,38 +127,15 @@
     <script src="{{asset('template/toastr-master/build/toastr.min.js')}}"></script>
     <script src="{{asset('js/medivh.js')}}"></script>
     <script type="text/javascript">
-        @if(session()->has('toastr'))
+        @if(session()->has('success'))
         (function ( $ ){
-        toastr.success('New {{session("toastr")}} successfully saved..', 'An {{session("toastr")}} has been created.');
+        toastr.success('New {{session("success")}} successfully saved..', '{{session("success")}} has been created.');
         })( jQuery );
         @endif
-        @if(Session::get('update'))
+        @if(session()->has('danger'))
         (function ( $ ){
-            toastr.success('Edit {{Session::get('update')}} successfully saved..', 'An {{Session::get('update')}} has been edited.');
+        toastr.error('{{session("danger")}}', 'An error has occured');
         })( jQuery );
-        @endif
-        @if(Session::get('dlt'))
-        (function ( $ ){
-            toastr.success('Successful {{Session::get('dlt')}} deleted..', 'An {{Session::get('dlt')}} has been deleted.');
-        })( jQuery );
-        @endif
-        @if(Session::get('danger'))
-        (function ( $ ){
-        //tambahan untk throw exeption gagal simpan n update
-        toastr.error('New {{Session::get('danger')}} failed to save', 'An error has occured');
-    })( jQuery );
-    @endif
-    @if(Session::get('danger-del'))
-    (function ( $ ){
-        //tmbhn untuk throw exception gagal hapus
-        toastr.error('Data {{Session::get('danger')}} failed to delete', 'An error has occured');
-    })( jQuery );
-    @endif
-    @if(Session::get('error'))
-    (function ( $ ){
-        //tambahan untk throw exeption selesai produksi
-        toastr.error('{{Session::get('error')}} hanya dapat diselesaikan oleh petugas yang berkaitan', 'An error has occured');
-    })( jQuery );
     @endif
 </script>
 <script>

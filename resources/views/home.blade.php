@@ -16,19 +16,6 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12">
-      <div class="card text-white bg-flat-color-3">
-        <div class="card-body pb-0">
-          <h4 class="mb-0">
-            <span class="count">{{$productval}}</span>
-          </h4>
-          <p class="text-light">Jumlah Layanan</p>
-          <div class="chart-wrapper px-0" style="height:70px;" height="70"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-            <canvas id="widgetChart2" height="218" width="938" style="display: block; width: 469px; height: 109px;"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
     </div>
 @endsection

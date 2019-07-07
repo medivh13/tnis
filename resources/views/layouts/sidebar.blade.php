@@ -7,24 +7,15 @@
         <li class="menu-item-has-children dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Master</a>
             <ul class="sub-menu children dropdown-menu">
-                <li><i class="fa fa-id-badge"></i><a href="{{URL('admin/user')}}">Users</a></li>
-                <li><i class="fa fa-suitcase"></i><a href="{{URL('admin/product')}}">Services</a></li>
+                <li><i class="fa fa-users"></i><a href="{{URL('admin/account')}}">Customer Monitoring</a></li>
             </ul>
         </li>
         <li class="menu-item-has-children dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Transaction</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Deposit Cash</a>
             <ul class="sub-menu children dropdown-menu">
-                <li><i class="fa fa-location-arrow"></i><a href="{{URL('admin/order')}}">Orders</a></li>
-                <li><i class="fa fa-location-arrow"></i><a href="{{URL('admin/monitoring-order')}}">Monitoring Orders</a></li>
-                <li><i class="fa fa-location-arrow"></i><a href="{{URL('admin/pay')}}">Pembayaran</a></li>
+                <li><i class="fa fa-location-arrow"></i><a href="{{URL('admin/deposit')}}">New Customer</a></li>
+                <li><i class="fa fa-location-arrow"></i><a href="{{route('deposit.create')}}">Existing Customer</a></li>
             </ul>
         </li>
-
-        <!-- <li class="menu-item-has-children dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Test2</a>
-            <ul class="sub-menu children dropdown-menu">
-                <li><i class="fa fa-table"></i><a href="{{URL('admin/calculator')}}">Calculator</a></li>
-            </ul>
-        </li> -->
     </ul>
 </div><!-- /.navbar-collapse -->

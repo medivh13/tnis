@@ -14,7 +14,7 @@
       <div class="row">
         <div class="table-responsive">
           <div class="col-md-12 classic">
-            <table class="table table-bordered table-hover" id="table"><!-- buat triger di js #table-->
+            <table class="table table-bordered table-hover" id="table">
               <thead>
                 <tr>
                   <th width="5%";>#</th>

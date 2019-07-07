@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnTglBayarOrder extends Migration
+class CreateAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddColumnTglBayarOrder extends Migration
      */
     public function up()
     {
-        if (!Schema::hasColumn('tb_order', 'tgl_bayar')) {
-            Schema::table('tb_order', function(Blueprint $table) {
-                $table->timestamp('tgl_bayar')->after('tgl_selesai')->nullable();
+        if (!Schema::hasTable('accounts')) {
+            Schema::create('accounts', function (Blueprint $table) {
+                $table->uuid('id')->primary();
+                $table->string('customer_id');
+                $table->double('balance');
+                $table->timestamps();
             });
         }
     }
@@ -27,6 +30,6 @@ class AddColumnTglBayarOrder extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('accounts');
     }
 }
