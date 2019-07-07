@@ -28,5 +28,6 @@ username = postmaster@sandbox4b6cd98db3584b1185780973ecfad0a9.mailgun.org
 pass 63028d3b9a287a83029d00ceead2a2b2-2b0eef4c-f5e35473
 
 Run composer install n artisan key generate after cloning
+then run artisan migrate to clone the DB
 
 diagram is in "Diagram" directory
